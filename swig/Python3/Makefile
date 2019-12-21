@@ -44,9 +44,9 @@ else
   # Make sure you have Atlas installed. You can statically link Atlas if you
   # would like to be able to move the library to a machine without Atlas.
   ifneq ("$(ldconfig -p | grep lapack_atlas)","")
-    LDLIBS := -lm -ldl -lf77blas -lcblas -llapack_atlas -latlas
+    LDLIBS := -lm -ldl
   else
-    LDLIBS := -lm -ldl -lf77blas -lcblas -llapack -latlas
+    LDLIBS := -lm -ldl
   endif
   SNOWBOYDETECTLIBFILE = $(TOPDIR)/lib/ubuntu64/libsnowboy-detect.a
   ifneq (,$(findstring arm,$(shell uname -m)))

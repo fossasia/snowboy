@@ -34,12 +34,13 @@ if sys.platform == 'darwin':
     link_args = ['-framework', 'Accelerate', '-bundle', '-flat_namespace', '-undefined', 'suppress']
 else:
     cxx_flags.append('-std=c++0x')
-    libraries.extend(['f77blas', 'cblas', 'atlas'])
+    # libraries.extend(['f77blas', 'cblas', 'atlas'])
+    # libraries.extend(['cblas'])
 
-    if ctypes.util.find_library('lapack_atlas'):
-        libraries.append('lapack_atlas')
-    else:
-        libraries.append('lapack')
+    #if ctypes.util.find_library('lapack_atlas'):
+    #    libraries.append('lapack_atlas')
+    #else:
+    #    libraries.append('lapack')
 
 ext_modules = [
     Extension(
